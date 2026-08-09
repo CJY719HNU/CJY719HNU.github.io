@@ -2,6 +2,8 @@
 baseurl = "https://CJY719HNU.github.io/"
 locale  = "zh-CN"
 title   = "CJY719HNU"
+# Use the local theme (offline-friendly, no module downloads)
+theme   = "hugo-theme-stack"
 
 # Theme i18n support
 # See all available values at https://github.com/CaiJimmy/hugo-theme-stack/tree/master/i18n
