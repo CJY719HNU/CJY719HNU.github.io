@@ -10,7 +10,7 @@ favicon        = "img/favicon.png"
 SortBy              = "default"
 
 [footer]
-    since      = 2020
+    since      = 2026
     customText = ""
 
 [dateFormat]
@@ -19,7 +19,7 @@ SortBy              = "default"
 
 [sidebar]
     emoji    = "🍥"
-    subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    subtitle = "CJY719HNU 的个人博客"
     avatar   = "img/avatar.png"
 
 [article]
@@ -49,9 +49,12 @@ SortBy              = "default"
     default = "auto"
 
 ## Comments
+# Utterances: GitHub 登录评论，评论以 Issue 形式存到下面的仓库中
 [comments]
     enabled  = true
-    provider = "disqus"
+    provider = "utterances"
 
-    # See all the available configurations at https://github.com/CaiJimmy/hugo-theme-stack/blob/master/config/_default/params.toml
-    # Copy the configurations you need from there and paste it here.
+    [comments.utterances]
+        repo      = "CJY719HNU/CJY719HNU.github.io"
+        issueTerm = "pathname"
+        label     = "comment"
