@@ -1,10 +1,14 @@
 ---
-title: Links
+title: 链接
 links:
   - title: GitHub
     description: GitHub is the world's largest software development platform.
     website: https://github.com
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  - title: Bilibili
+    description: 你感兴趣的视频都在B站。
+    website: https://www.bilibili.com
+    image: /img/bilibili-color.png
 menu:
     main: 
         weight: 4

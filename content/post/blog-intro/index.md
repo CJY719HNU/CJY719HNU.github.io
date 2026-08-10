@@ -41,7 +41,7 @@ draft: false
 - **Stack 主题** —— 简洁现代的主题，支持中文、深色模式、GitHub 评论
 - **GitHub Pages** —— 免费托管，推送即部署
 
-关于这套博客是怎么搭起来的、怎么用，可以看我的另一篇文章：《[Hugo + Stack 主题完整使用教程](/p/hugo-stack-tutorial/)》。
+关于这套博客是怎么搭起来的、怎么用，可以看我的另一篇文章：《[Hugo + Stack 主题完整使用教程](/tutorials/hugo-stack-tutorial/)》。
 
 ## 评论与交流
 

@@ -1,5 +1,5 @@
 # Pages placed under these sections will be shown on homepage and archive page.
-mainSections = ["post"]
+mainSections = ["post", "notes", "projects", "tutorials"]
 # Output page's full content in RSS.
 rssFullContent = true
 favicon        = "img/favicon.png"
@@ -18,8 +18,8 @@ SortBy              = "default"
     lastUpdated = ":date_full"
 
 [sidebar]
-    emoji    = "🍥"
-    subtitle = "CJY719HNU 的个人博客"
+    emoji    = "🤖"
+    subtitle = "本人为湖南大学人工智能与机器人学院自动化大二在读生，欢迎来到我的博客。"
     avatar   = "img/avatar.png"
 
 [article]

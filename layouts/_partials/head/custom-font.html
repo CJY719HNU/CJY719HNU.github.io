@@ -1,0 +1,7 @@
+{{- /*
+    覆盖主题的同名文件：屏蔽 Google Fonts（Lato）。
+    主题 CSS 里 --base-font-family: "Lato", var(--sys-font-family), sans-serif
+    没有 Lato 会自动回退到系统字体，不影响显示。
+    原因：fonts.googleapis.com 在国内常被墙，且该样式表渲染阻塞，
+    导致每次切页/打开文章都卡顿等待超时。
+*/ -}}

@@ -45,10 +45,24 @@ hugo-stack-blog/
 │       ├── markup.toml     # Markdown 渲染
 │       ├── permalinks.toml # URL 规则
 │       └── related.toml    # 相关文章
+├── archetypes/             # hugo new 生成文章时用的模板
+│   ├── post.md             #   长文 模板
+│   ├── notes.md            #   笔记 模板
+│   ├── projects.md         #   项目 模板
+│   └── tutorial.md         #   教程 模板
 ├── content/
-│   └── post/               # 所有文章都放这里
-│       └── my-post/
-│           └── index.md    # 一篇文章（图片放同目录）
+│   ├── post/               # 长文
+│   │   └── my-post/
+│   │       └── index.md    # 一篇文章（图片放同目录）
+│   ├── notes/              # 笔记、踩坑记录（自动分类：笔记）
+│   │   └── makefile-flags/
+│   │       └── index.md
+│   ├── projects/           # 项目记录（自动分类：项目）
+│   │   └── robomaster-tool/
+│   │       └── index.md
+│   └── tutorials/          # 完整教程（自动分类：教程）
+│       └── hugo-stack-tutorial/
+│           └── index.md
 ├── themes/
 │   └── hugo-theme-stack/   # 本地主题（离线使用，不联网下载）
 └── .github/workflows/
@@ -84,10 +98,15 @@ hugo --gc --minify          # 构建并压缩（部署时用）
 在根目录执行（会自动生成带 front matter 的文件）：
 
 ```bash
-hugo new content/post/我的文章/index.md
+hugo new content/post/我的文章/index.md          # 长文
+hugo new content/tutorials/my-tutorial/index.md  # 教程
+hugo new content/notes/gdb-trick/index.md        # 笔记 / 踩坑
+hugo new content/projects/my-app/index.md        # 项目记录
 ```
 
-或者直接手动新建 `content/post/xxx/index.md`。**每篇文章一个目录**，图片放进同目录，正文写在 `index.md`。
+> 四个分区各有模板，放在哪个分区就带哪个默认分类：`post` 无默认，`notes` 自动带 `categories: [笔记]`，`projects` 自动带 `categories: [项目]`，`tutorials` 自动带 `categories: [教程]`。想加其他分类直接在 front matter 里补即可（会覆盖默认值）。
+
+或者直接手动新建 `content/post/xxx/index.md`。**每篇文章一个目录**，图片放进同目录，正文写在 `index.md`。首页和归档页会扫描 `post`、`notes`、`projects`、`tutorials` 四个分区（`mainSections` 配置），新建的文章自动收录，不用手动加任何链接。
 
 ### 4.2 front matter（文章头部信息）
 
@@ -156,7 +175,7 @@ Stack 内置了常用外链嵌入短代码：
 | 短代码 | 用途 | 示例 |
 |---|---|---|
 | `youtube` | YouTube 视频 | `{{< youtube id="视频ID" >}}` |
-| `bilibili` | B 站视频 | `{{< bilibili "BV号" >}}` |
+<!-- | `bilibili` | B 站视频 | `{{< bilibili "BV号" >}}` | -->
 | `video` | 本地视频 | `{{< video src="/videos/demo.mp4" >}}` |
 | `quote` | 文艺引用 | `{{< quote author="作者" >}}...{{< /quote >}}` |
 
@@ -214,7 +233,7 @@ hasCJKLanguage = true                      # 中文排版优化
 ### 5.2 params.toml — 主题参数
 
 ```toml
-mainSections = ["post"]    # 首页展示的文章目录
+mainSections = ["post", "notes", "projects", "tutorials"]  # 首页/归档扫描的分区
 
 [sidebar]
     emoji    = "🍥"        # 头像右上角的小表情
