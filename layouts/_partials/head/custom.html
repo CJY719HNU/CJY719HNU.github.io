@@ -1,5 +1,7 @@
 {{- /*
     自定义 head 内容（覆盖主题的同名文件）。
     这里引入不蒜子（busuanzi.cn）统计脚本。
+    用 defer 而不是 async：确保脚本在 HTML 解析完、<span> 存在后再执行，
+    否则异步脚本可能抢跑在 <body> 渲染前，拿不到标签导致阅读量不显示。
 */ -}}
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

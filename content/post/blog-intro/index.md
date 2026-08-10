@@ -12,7 +12,7 @@ weight: -1          # 置顶：weight 越小越靠前
 draft: false
 ---
 
-欢迎来到我的博客，这里是 [CJY719HNU](https://github.com/CJY719HNU) 的个人站点，本人为湖南大学人工智能与机器人学院自动化大二在读生。📝
+欢迎来到我的博客，这里是 [CJY719HNU](https://github.com/CJY719HNU) 的个人站点。📝
 
 
 ## 关于这个博客
