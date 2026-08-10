@@ -14,3 +14,11 @@
 
     [social.params]
         icon = "brand-github"
+
+[[social]]
+    identifier = "bilibili"
+    name       = "Bilibili"
+    url        = "https://space.bilibili.com/475211036"
+
+    [social.params]
+        icon = "brand-bilibili"
