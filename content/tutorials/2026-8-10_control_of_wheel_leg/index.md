@@ -7,6 +7,7 @@ tags:
     - 控制理论
 math: true          
 draft: false
+image: 20250804144703189.png
 ---
 
 
