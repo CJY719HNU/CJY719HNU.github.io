@@ -1,0 +1,24 @@
+<footer class="article-meta article-footer">
+    {{ partial "article/components/tags" . }}
+
+    {{ if and (.Site.Params.article.license.enabled) (not (eq .Params.license false)) }}
+    <section class="article-copyright inline-meta">
+        {{ partial "helper/icon" "copyright" }}
+        <span>{{ default .Site.Params.article.license.default .Params.license | markdownify }}</span>
+    </section>
+    {{ end }}
+
+    {{- if ne .Lastmod .Date -}}
+    <section class="article-lastmod inline-meta">
+        {{ partial "helper/icon" "clock" }}
+        <span>
+            {{ T "article.lastUpdatedOn" }} {{ .Lastmod | time.Format .Site.Params.dateFormat.lastUpdated }}
+        </span>
+    </section>
+    {{- end -}}
+
+    {{- /* 单篇阅读量：busuanzi 脚本自动填充 busuanzi_value_page_pv */ -}}
+    <section class="article-pageview inline-meta">
+        <span>本文阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+    </section>
+</footer>
