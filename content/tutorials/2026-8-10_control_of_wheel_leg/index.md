@@ -57,7 +57,7 @@ $$I_{\text{m}} \ddot{\varphi} = T_{\text{P}} + N_{\text{M}} l \cos\varphi + P_{\
 $$ $$\dot{x} = \dot{x}_b (L + L_{\text{M}})\dot{\theta}\cos\theta$$  $$\ddot{x} = \ddot{x}_b - (L + L_{\text{M}})\ddot{\theta}\cos\theta + (L + L_{\text{M}})\dot{\theta}^2\sin\theta$$
 进行运动学分解，目的是为了**给状态空间方程建立做准备**。
 ## 3.状态空间方程
-首先大家需要理解一件事，矩阵本质是描述**线性映射/线性变换**的数学工具，我们在校所学的线性代数未能很好阐述矩阵、行列式、线性的作用和概念，建议大家去看[MIT的线代教学](https://www.bilibili.com/video/BV1rH4y1N7BW/?spm_id_from=333.337.search-card.all.click)或[3B1B的线代科普](https://www.bilibili.com/video/BV1ib411t7YR/?spm_id_from=333.337.search-card.all.click&vd_source=87b52e0742bfb06e0d4c873fc9665d77)，可能会有新的收获。
+首先大家需要理解一件事，矩阵本质是描述**线性映射/线性变换**的数学工具，我们在校所学的线性代数可能未能很好阐述矩阵、行列式、线性的作用和概念，建议大家去看[MIT的线代教学](https://www.bilibili.com/video/BV1rH4y1N7BW/?spm_id_from=333.337.search-card.all.click)或[3B1B的线代科普](https://www.bilibili.com/video/BV1ib411t7YR/?spm_id_from=333.337.search-card.all.click&vd_source=87b52e0742bfb06e0d4c873fc9665d77)，会有新的收获。
 状态空间方程基本形式如下
 $$
 \dot{x} = Ax+Bu \\
@@ -69,9 +69,11 @@ $$
 **C是输出矩阵，描述系统状态x到实际输出的线性映射关系**
 **D是前馈矩阵，代表了输入对输出的直接实际影响**
 为了使大家更好理解状态空间矩阵，可以从此超链接到[弹簧阻尼系统](https://rcnx6qvc5trj.feishu.cn/docx/DwMpdP7kxoxljxxXXKXcKDhMnJd)的例子。
-同时，你需要理解以下这句话：LQR本身是**线性系统**的最优控制方法，处理形如$\dot{x} = Ax+Bu$的线性状态空间模型。**而轮腿是典型的非线性系统，真实动力学满足**$\dot{x} = f(x,u)$**这个函数（或者说，映射，这个f是什么在这里你不用在意），**因此需要用雅可比矩阵在平衡点处进行**线性化。**
+同时，你需要理解以下这句话：
+LQR本身是**线性系统**的最优控制方法，处理形如$\dot{x} = Ax+Bu$的线性状态空间模型。**而轮腿是典型的非线性系统，真实动力学满足**$\dot{x} = f(x,u)$**这个函数（或者说，映射，这个f是什么在这里你不用在意），**因此需要用雅可比矩阵在平衡点处进行**线性化。**
 ![image.png](图片和附件/image%205.png)
-（非线性关系“线性化”比较直观的体现）
+<center>（非线性关系“线性化”比较直观的体现）<center>
+
 雅可比矩阵第一次接触应该会在高数下，从直角坐标系到球坐标系柱坐标系的变换，其具体作用可参考[3B1B的视频](https://www.bilibili.com/video/BV1NJ411r7ja/?spm_id_from=333.337.search-card.all.click&vd_source=87b52e0742bfb06e0d4c873fc9665d77)。
 定义系统非线性模型$\dot{x} = f(x,u)$，其中状态向量$x $与输入向量$u$分别为
 $$

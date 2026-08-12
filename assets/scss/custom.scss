@@ -1,3 +1,16 @@
 /*
     You can add your own custom styles here.
 */
+
+/* 半透明壁纸背景
+   遮罩用主题的 --body-background，自动适配浅色/暗色模式。
+   color-mix 中的 85% 是遮罩不透明度：调小(如60%)壁纸更明显，调大(如95%)壁纸更淡。
+   壁纸文件放 static/img/ 下，url 路径相对站点根目录。 */
+body {
+    background:
+        linear-gradient(
+            color-mix(in srgb, var(--body-background) 50%, transparent),
+            color-mix(in srgb, var(--body-background) 50%, transparent)
+        ),
+        url('/img/allrobot.jpg') center/cover no-repeat fixed;
+}
