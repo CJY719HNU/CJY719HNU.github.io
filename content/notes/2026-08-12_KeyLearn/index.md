@@ -4,13 +4,12 @@ description: 一篇关于ssh、公钥、私钥、加密技术以及哈希学习�
 date: 2026-08-12T23:18:59+08:00
 image:                  # 封面图，如 cover.jpg（放到本笔记目录里）
 math: true
+categories: [笔记]
 tags:
     - Git
     - SSH
     - 密码学
 draft: false             # 发布时把 true 改成 false
-# 分类不用写：本分区会自动带上 categories: [笔记]
-# 想加别的分类（如 嵌入式），在这里补上即可
 ---
 
 ## 前言

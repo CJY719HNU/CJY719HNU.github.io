@@ -3,12 +3,11 @@ title: Linux系统编程从零实战笔记（1）：从Hello World到多线程TC
 description: 本系列放弃晦涩的纯理论，采用“先讲生活概念，再写代码验证，最后逐行拆解”的方式，旨在记录从零搭建环境到实现多线程高并发服务器的完整过程
 date: 2026-08-11T20:51:11+08:00
 image: gaoya.png
+categories: [笔记]
 tags:
     - Linux
     - 嵌入式
 draft: true             # 发布时把 true 改成 false
-# 分类不用写：本分区会自动带上 categories: [笔记]
-# 想加别的分类（如 嵌入式），在这里补上即可
 ---
 
 ## 第一部分：环境搭建与编译哲学
