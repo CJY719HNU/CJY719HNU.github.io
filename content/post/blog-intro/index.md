@@ -3,7 +3,6 @@ title: 关于这个博客
 description: 为什么开这个博客、会写些什么、以及怎么联系我
 slug: about
 date: 2026-08-10 00:00:00+0800
-image: cover.jpg
 categories:
     - 介绍
 tags:

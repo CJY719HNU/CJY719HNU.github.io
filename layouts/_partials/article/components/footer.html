@@ -17,8 +17,12 @@
     </section>
     {{- end -}}
 
-    {{- /* 单篇阅读量：busuanzi 脚本自动填充 busuanzi_value_page_pv */ -}}
+    {{- /* 单篇阅读量：busuanzi 脚本自动填充 busuanzi_value_page_pv
+          只在文章页显示；content/page/ 下的独立页面（关于、友链等）不显示。
+          区分依据：独立页面的 section 为 "page"，文章（post/notes/tutorials）的 section 各不相同。 */}}
+    {{- if ne .Section "page" -}}
     <section class="article-pageview inline-meta">
         <span>本文阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
     </section>
+    {{- end -}}
 </footer>

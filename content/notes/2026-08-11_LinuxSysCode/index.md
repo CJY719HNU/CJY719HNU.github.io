@@ -1,13 +1,12 @@
 ---
 title: Linux系统编程从零实战笔记（1）：从Hello World到多线程TCP服务器
-description: 本系列放弃晦涩的纯理论，采用“先讲生活概念，再写代码验证，最后逐行拆解”的方式，旨在记录从零搭建环境到实现多线程高并发服务器的完整过程
+description: 本文为个人学习Linux系统编程的学习笔记
 date: 2026-08-11T20:51:11+08:00
-image: gaoya.png
 categories: [笔记]
 tags:
     - Linux
     - 嵌入式
-draft: true             # 发布时把 true 改成 false
+draft: false             # 发布时把 true 改成 false
 ---
 
 ## 第一部分：环境搭建与编译哲学
@@ -112,7 +111,7 @@ pthread_mutex_destroy(&mutex);
 
 ---
 
-## 第六部分：终极实战——多线程TCP服务器（老板与工人模型）
+## 第六部分：多线程TCP服务器（老板与工人模型）
 
 ### 1. 架构设计
 - **老板（主线程）：** 死循环 `accept`，只负责接客。
