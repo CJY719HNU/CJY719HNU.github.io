@@ -4,6 +4,7 @@ description: 一篇关于自动控制原理向现代控制理论转换的学习�
 date: 2026-08-10T18:07:28+08:00
 image:                  # 封面图，如 cover.jpg（放到本笔记目录里）
 categories: [笔记]
+math: true
 tags:
     - 控制理论
     - 自动控制原理
@@ -54,15 +55,23 @@ $$x_1(t) = x(t), \quad x_2(t) = \dot{x}(t) $$
 ---
 ### 状态方程与输出方程
 由动力学方程可得：
+
 $$\dot{x}_1 = x_2$$
-$$\dot{x}_2 = -\frac{k}{m}x_1 - \frac{c}{m}x_2 + \frac{1}{m}u$$
+
+$$
+\dot{x}_2 = -\frac{k}{m}x_1 - \frac{c}{m}x_2 + \frac{1}{m}u
+$$
+
 假设输出为位移：
-$$y(t) = x_1(t)$$
+
+$$
+y(t) = x_1(t)
+$$
+
 写成矩阵形式：
-$$\begin{bmatrix}
-\dot{x}_1 \\ \dot{x}_2
-\end{bmatrix}
-=
+
+$$
+\begin{bmatrix} \dot{x}_1 \\ \dot{x}_2 \end{bmatrix} =
 \begin{bmatrix}
 0 & 1 \\
 -\frac{k}{m} & -\frac{c}{m}
@@ -74,7 +83,8 @@ x_1 \\ x_2
 \begin{bmatrix}
 0 \\ \frac{1}{m}
 \end{bmatrix}
-u(t) $$
+u(t) 
+$$
 
 $$y(t) =
 \begin{bmatrix}
@@ -136,19 +146,15 @@ s+\frac{b}{m} & 1 \\
 $$
 
 左乘矩阵$C$：
-$$
-C(sI-A)^{-1}=\begin{bmatrix} 1 & 0\end{bmatrix}\frac
-{\begin{bmatrix} 
-s+\frac{b}{m} & 1 \\
--\frac{k}{m} & s \\
-\end{bmatrix}}{s^2+\frac{B}{m}s+\frac{k}{m}}
-=
-\frac
-{\begin{bmatrix} 
-s+\frac{b}{m} & 1 \\
 
-\end{bmatrix}}{s^2+\frac{B}{m}s+\frac{k}{m}}
 $$
+C(sI-A)^{-1}=\begin{bmatrix} 1 & 0 \end{bmatrix}\frac{\begin{bmatrix} s+\frac{b}{m} & 1 \\
+-\frac{k}{m} & s \\
+\end{bmatrix}}
+{s^2+\frac{B}{m}s+\frac{k}{m}}
+=\frac{\begin{bmatrix} s+\frac{b}{m} & 1 \\\end{bmatrix}}{s^2+\frac{B}{m}s+\frac{k}{m}}
+$$
+
 再右乘矩阵$B$，并加上矩阵$D$（对应0）：
 $$
 C(sI-A)^{-1}B+D=\frac{\frac{1}{m}}{s^2+\frac{B}{m}s+\frac{k}{m}}+0
